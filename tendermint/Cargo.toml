@@ -31,6 +31,9 @@ all-features = true
 [badges]
 codecov = { repository = "..."}
 
+[lib]
+crate-type = ["cdylib", "rlib"]
+
 [dependencies]
 anomaly = "0.2"
 async-trait = "0.1"
@@ -46,7 +49,7 @@ serde_bytes = "0.11"
 serde_repr = "0.1"
 sha2 = { version = "0.9", default-features = false }
 signatory = { version = "0.20", features = ["ed25519", "ecdsa"] }
-signatory-dalek = "0.20"
+signatory-dalek = { version = "0.20", features = ["nightly"] }
 signatory-secp256k1 = { version = "0.20", optional = true }
 subtle = "2"
 subtle-encoding = { version = "0.5", features = ["bech32-preview"] }
